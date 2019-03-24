@@ -17,35 +17,47 @@ import {
 } from 'antd';
 import PageHeaderWrapper from '@/components/PageHeaderWrapper';
 import ImageUpload from '@/components/ImageUpload/ImageUpload';
+import expressImage from '../../../public/express.png';
+import axios from 'axios'
 import styles from './SellerProfile.less';
 const FormItem = Form.Item;
+
 @connect(({ store, loading }) => ({ store, loading: loading.models.store }))
 class Store extends PureComponent {
   constructor() {
     super();
     this.state = {
       formLayout: 'horizontal',
-      imageData: [],
     };
   }
   handleSubmit = e => {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        let image = this.state.imageData
-      //  console.log('imageData length ', image[0].name);
-      //  console.log("thumbUrl ",image[0].thumbUrl)
+        // let image = this.state.imageData[0];
+        // console.log("image is  ",image)
         const formData = new FormData();
-        formData.append(image[0].name ,image[0].thumbUrl );
-        values.ImageDate = formData;
-        console.log('Received values of form: ', formData);
-        var { dispatch } = this.props;
-        dispatch({
-          type: 'store/addProduct',
-          payload: {
-            values,
-          },
-        });
+        var blob = new Blob(expressImage);
+
+        formData.append('file', blob );
+        for (var key of formData.entries()) {
+          console.log(key[0] + ', ' +JSON.stringify(key[1]))
+        }
+        axios.post('http://localhost:5000/store',formData, {headers: {
+          // 'Content-Type': 'multipart/form-data',
+          // 'Accept': 'application/json'
+        },})
+        .then(res =>{
+            console.log("resssssssssssssssss ",res)
+        })
+        // var { dispatch } = this.props;
+        // dispatch({
+        //   type: 'store/addProduct',
+        //   payload: {
+        //        values,
+        //     productImage: formData,
+        //   },
+        // });
       }
     });
   };
@@ -88,7 +100,7 @@ class Store extends PureComponent {
         <Card title="Fill Up Form">
           <Row>
             <Col>
-              <Form layout={formLayout} onSubmit={this.handleSubmit}>
+              <Form layout={formLayout} onSubmit={this.handleSubmit} enctype="multipart/form-data">
                 <FormItem label="Store Image" {...formItemLayout}>
                   <ImageUpload count={1} getImage={this.saveImage.bind(this)} />
                 </FormItem>

@@ -129,6 +129,18 @@ export default [
           },
         ],
       },
+      {
+        path: '/details',
+        icon: 'form',
+        name: 'details',
+        routes: [
+          {
+            path: '/details/',
+            name: 'details',
+            component: './Details/index.js',
+          },
+        ],
+      },
 
       //////////////sellerEnd//////////
       // forms

@@ -45,7 +45,8 @@ class ImageUpload extends PureComponent {
       <div className="clearfix">
         <Upload
           action="//jsonplaceholder.typicode.com/posts/"
-          listType="picture-card"
+          listType="picture"
+          accept = "files"
           //fileList={fileList}
           onPreview={this.handlePreview}
           onChange={this.handleChange}

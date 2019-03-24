@@ -104,12 +104,10 @@ export default async function request(url, options) {
     newOptions.method === 'DELETE'
   ) {
     if (!(newOptions.body instanceof FormData)) {
-      console.log('00');
+      console.log("00")
       newOptions.headers = {
         Accept: 'application/json',
-        mode: 'no-cors',
-
-        'Content-Type': 'application/json; charset=utf-8',
+        'Content-Type': 'application/json',
         ...newOptions.headers,
       };
       newOptions.body = JSON.stringify(newOptions.body);

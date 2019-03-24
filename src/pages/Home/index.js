@@ -1,19 +1,8 @@
 import React, { PureComponent } from 'react';
 
-import { List, Avatar, Icon } from 'antd';
-
-const listData = [];
-for (let i = 0; i < 23; i++) {
-  listData.push({
-    href: 'http://ant.design',
-    title: `ant design part ${i}`,
-    avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
-    description:
-      'Ant Design, a design language for background applications, is refined by Ant UED Team.',
-    content:
-      'We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.',
-  });
-}
+import { Row, Col, Card, Icon, Avatar, Anchor } from 'antd';
+import { Link } from 'dva/router';
+const { Meta } = Card;
 
 const IconText = ({ type, text }) => (
   <span>
@@ -22,68 +11,253 @@ const IconText = ({ type, text }) => (
   </span>
 );
 class HomePage extends PureComponent {
-  handleSubmit = e => {
-    e.preventDefault();
-    this.props.form.validateFields((err, values) => {
-      if (!err) {
-        console.log('Received values of form: ', values);
-      }
-    });
-  };
-
-  constructor() {
-    super();
-    this.state = {
-      formLayout: 'horizontal',
-    };
-  }
-
-  handleFormLayoutChange = e => {
-    this.setState({ formLayout: e.target.value });
-  };
-
   render() {
     return (
-      <List
-        itemLayout="vertical"
-        size="large"
-        pagination={{
-          onChange: page => {
-            console.log(page);
-          },
-          pageSize: 3,
-        }}
-        dataSource={listData}
-        footer={
-          <div>
-            <b>ant design</b> footer part
-          </div>
-        }
-        renderItem={item => (
-          <List.Item
-            key={item.title}
-            actions={[
-              <IconText type="star-o" text="156" />,
-              <IconText type="like-o" text="156" />,
-              <IconText type="message" text="2" />,
-            ]}
-            extra={
-              <img
-                width={272}
-                alt="logo"
-                src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png"
+      <div style={{ background: '#ECECEC', padding: '30px' }}>
+        <Row gutter={16}>
+          <Col span={5}>
+            <Link to={'/details?image=pet1.jpeg'}>
+              <Card
+                style={{ width: 250 }}
+                cover={
+                  <img
+                    alt="example"
+                    style={{ height: 200, width: '100%' , borderRadius: '30%' }}
+                    src="/images/pet1.jpg"
+                  />
+                }
+                actions={[<Icon type="setting" />, <Icon type="edit" />, <Icon type="ellipsis" />]}
+              >
+                <Meta
+                  avatar={
+                    <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+                  }
+                  title="Baby Dog"
+                  description="23000Rs"
+                />
+              </Card>
+            </Link>
+          </Col>
+          <Col span={5}>
+            <Card
+              style={{ width: 250 }}
+              cover={
+                <img
+                  alt="example"
+                  style={{ height: 200, width: '100%', borderRadius: '30%' }}
+                  src="/images/pet11.jpeg"
+                />
+              }
+              actions={[<Icon type="setting" />, <Icon type="edit" />, <Icon type="ellipsis" />]}
+            >
+              <Meta
+                avatar={
+                  <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+                }
+                title="Card title"
+                description="This is the description"
               />
-            }
-          >
-            <List.Item.Meta
-              avatar={<Avatar src={item.avatar} />}
-              title={<a href={item.href}>{item.title}</a>}
-              description={item.description}
-            />
-            {item.content}
-          </List.Item>
-        )}
-      />
+            </Card>
+          </Col>
+          <Col span={5}>
+            <Card
+              style={{ width: 250 }}
+              cover={
+                <img alt="example" style={{ height: 200, width: '100%' , borderRadius: '30%' }} src="/images/pet4.jpeg" />
+              }
+              actions={[<Icon type="setting" />, <Icon type="edit" />, <Icon type="ellipsis" />]}
+            >
+              <Meta
+                avatar={
+                  <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+                }
+                title="Card title"
+                description="This is the description"
+              />
+            </Card>
+          </Col>
+          <Col span={6}>
+            <Card
+              style={{ width: 250 }}
+              cover={
+                <img
+                  alt="example"
+                  style={{ height: 200, width: '100%' ,  borderRadius: '30%' }}
+                  src="/images/pet10.jpeg"
+                />
+              }
+              actions={[<Icon type="setting" />, <Icon type="edit" />, <Icon type="ellipsis" />]}
+            >
+              <Meta
+                avatar={
+                  <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+                }
+                title="Card title"
+                description="This is the description"
+              />
+            </Card>
+          </Col>
+        </Row>
+        <br />
+        <Row gutter={16}>
+          <Col span={5}>
+            <Card
+              style={{ width: 250 }}
+              cover={
+                <img
+                  alt="example"
+                  style={{ height: 200, width: '100%' , borderRadius: '30%' }}
+                  src="/images/pet11.jpeg"
+                />
+              }
+              actions={[<Icon type="setting" />, <Icon type="edit" />, <Icon type="ellipsis" />]}
+            >
+              <Meta
+                avatar={
+                  <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+                }
+                title="Card title"
+                description="This is the description"
+              />
+            </Card>
+          </Col>
+          <Col span={5}>
+            <Card
+              style={{ width: 250 }}
+              cover={
+                <img alt="example" style={{ height: 200, width: '100%' , borderRadius: '30%' }} src="/images/pet7.jpg" />
+              }
+              actions={[<Icon type="setting" />, <Icon type="edit" />, <Icon type="ellipsis" />]}
+            >
+              <Meta
+                avatar={
+                  <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+                }
+                title="Card title"
+                description="This is the description"
+              />
+            </Card>
+          </Col>
+          <Col span={5}>
+            <Card
+              style={{ width: 250 }}
+              cover={
+                <img alt="example" style={{ height: 200, width: '100%' , borderRadius: '30%' }} src="/images/pet8.jpeg" />
+              }
+              actions={[<Icon type="setting" />, <Icon type="edit" />, <Icon type="ellipsis" />]}
+            >
+              <Meta
+                avatar={
+                  <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+                }
+                title="Card title"
+                description="This is the description"
+              />
+            </Card>
+          </Col>
+          <Col span={6}>
+            <Card
+              style={{ width: 250 }}
+              cover={
+                <img alt="example" style={{ height: 200, width: '100%' , borderRadius: '30%' }} src="/images/pet9.jpeg" />
+              }
+              actions={[<Icon type="setting" />, <Icon type="edit" />, <Icon type="ellipsis" />]}
+            >
+              <Meta
+                avatar={
+                  <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+                }
+                title="Card title"
+                description="This is the description"
+              />
+            </Card>
+          </Col>
+        </Row>
+        <br />{' '}
+        <Row gutter={16}>
+          <Col span={5}>
+            <Card
+              style={{ width: 250 }}
+              cover={
+                <img alt="example" style={{ height: 200, width: '100%' , borderRadius: '30%' }} src="/images/pet9.jpeg" />
+              }
+              actions={[<Icon type="setting" />, <Icon type="edit" />, <Icon type="ellipsis" />]}
+            >
+              <Meta
+                avatar={
+                  <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+                }
+                title="Card title"
+                description="This is the description"
+              />
+            </Card>
+          </Col>
+          <Col span={5}>
+            <Card
+              style={{ width: 250 }}
+              cover={
+                <img
+                  alt="example"
+                  style={{ height: 200, width: '100%' , borderRadius: '30%' }}
+                  src="/images/pet10.jpeg"
+                />
+              }
+              actions={[<Icon type="setting" />, <Icon type="edit" />, <Icon type="ellipsis" />]}
+            >
+              <Meta
+                avatar={
+                  <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+                }
+                title="Card title"
+                description="This is the description"
+              />
+            </Card>
+          </Col>
+          <Col span={5}>
+            <Card
+              style={{ width: 250 }}
+              cover={
+                <img
+                  alt="example"
+                  style={{ height: 200, width: '100%' }}
+                  src="/images/pet11.jpeg"
+                />
+              }
+              actions={[<Icon type="setting" />, <Icon type="edit" />, <Icon type="ellipsis" />]}
+            >
+              <Meta
+                avatar={
+                  <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+                }
+                title="Card title"
+                description="This is the description"
+              />
+            </Card>
+          </Col>
+          <Col span={6}>
+            <Card
+              style={{ width: 250 }}
+              cover={
+                <img
+                  alt="example"
+                  style={{ height: 200, width: '100%' }}
+                  src="/images/pet13.jpeg"
+                />
+              }
+              actions={[<Icon type="setting" />, <Icon type="edit" />, <Icon type="ellipsis" />]}
+            >
+              <Meta
+                avatar={
+                  <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+                }
+                title="Card title"
+                description="This is the description"
+              />
+            </Card>
+          </Col>
+        </Row>
+        <br />{' '}
+      </div>
     );
   }
 }
