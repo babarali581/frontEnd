@@ -5,29 +5,54 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
 import { Link } from 'dva/router';
 const { Meta } = Card;
+import Viewer from 'react-viewer';
+import 'react-viewer/dist/index.css';
 
 function onChange(a, b, c) {
   console.log(a, b, c);
 }
 
 class details extends PureComponent {
+  constructor() {
+    super();
+
+    this.state = {
+      visible: true,
+    };
+  }
+
   render() {
     return (
-      <Carousel  style={{ height: 300 }} width="300px" height={30000} dynamicHeight={true} centerSlidePercentage={80}>
-        <div style={{ height: 300, width: '100px' }}>
-          <img src="images/pet1.jpg" style={{ height: 100, width: '200px' }} />
-          {/* <p className="legend">Legend 1</p> */}
-        </div>
-        <div>
-          <img src="images/pet2.jpeg" style={{ height: 100, width: '200px' }} />
-          <p className="legend">Legend 2</p>
-        </div>
-        <div>
-          <img src="images/pet3.jpeg" style={{ height: 100, width: '200px' }} />
-          <p className="legend">Legend 3</p>
-        </div>
-      </Carousel>
+      <Row gutter={16}>
+        <Col span={5}>
+          <Card>
+            <div>
+              <button
+                onClick={() => {
+                  this.setState({ visible: !this.state.visible });
+                }}
+              >
+                show
+              </button>
+              <Viewer
+                width={2}
+                noFooter={false}
+                visible={this.state.visible} /// {this.state.visible}
+                onClose={() => {
+                  this.setState({ visible: false });
+                }}
+                images={[
+                  { src: '/images/pet9.jpeg', alt: 'parriot' },
+                  { src: '/images/pet8.jpeg', alt: 'parriot' },
+                  { src: '/images/pet7.jpg', alt: 'parriot' },
+                ]}
+              />
+            </div>
+          </Card>
+        </Col>
+      </Row>
     );
   }
 }
+
 export default details;

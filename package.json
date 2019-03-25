@@ -60,7 +60,9 @@
     "react-fittext": "^1.0.0",
     "react-media": "^1.8.0",
     "react-responsive-carousel": "^3.1.47",
-    "react-router-dom": "^4.3.1"
+    "react-router-dom": "^4.3.1",
+    "react-viewer": "^2.8.0",
+    "uxcore": "^0.21.67"
   },
   "devDependencies": {
     "@types/react": "^16.7.7",
