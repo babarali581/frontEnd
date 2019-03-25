@@ -13,20 +13,20 @@ const IconText = ({ type, text }) => (
 class HomePage extends PureComponent {
   render() {
     return (
-      <div style={{ background: '#ECECEC', padding: '30px' }}>
+      <div style={{ background: '#ECECEC', padding: '30px', backgroundColor: '#8cbed6' }}>
         <Row gutter={16}>
           <Col span={5}>
-            <Link to={'/details?image=pet1.jpeg'}>
+            <Link to={'/details?image=pet7.jpg'}>
               <Card
-                style={{ width: 250 }}
+                style={{ width: 250, backgroundColor: '#8cbed6', borderColor: '#8cbed6' }}
                 cover={
                   <img
                     alt="example"
-                    style={{ height: 200, width: '100%' , borderRadius: '30%' }}
+                    style={{ height: 200, width: '100%', borderRadius: '30%' }}
                     src="/images/pet1.jpg"
                   />
                 }
-                actions={[<Icon type="setting" />, <Icon type="edit" />, <Icon type="ellipsis" />]}
+                // actions={[<Icon type="setting" />, <Icon type="edit" />, <Icon type="ellipsis" />]}
               >
                 <Meta
                   avatar={
@@ -40,7 +40,7 @@ class HomePage extends PureComponent {
           </Col>
           <Col span={5}>
             <Card
-              style={{ width: 250 }}
+              style={{ width: 250, backgroundColor: '#8cbed6', borderColor: '#8cbed6' }}
               cover={
                 <img
                   alt="example"
@@ -48,7 +48,7 @@ class HomePage extends PureComponent {
                   src="/images/pet11.jpeg"
                 />
               }
-              actions={[<Icon type="setting" />, <Icon type="edit" />, <Icon type="ellipsis" />]}
+              // actions={[<Icon type="setting" />, <Icon type="edit" />, <Icon type="ellipsis" />]}
             >
               <Meta
                 avatar={
@@ -61,11 +61,15 @@ class HomePage extends PureComponent {
           </Col>
           <Col span={5}>
             <Card
-              style={{ width: 250 }}
+              style={{ width: 250, backgroundColor: '#8cbed6', borderColor: '#8cbed6' }}
               cover={
-                <img alt="example" style={{ height: 200, width: '100%' , borderRadius: '30%' }} src="/images/pet4.jpeg" />
+                <img
+                  alt="example"
+                  style={{ height: 200, width: '100%', borderRadius: '30%' }}
+                  src="/images/pet4.jpeg"
+                />
               }
-              actions={[<Icon type="setting" />, <Icon type="edit" />, <Icon type="ellipsis" />]}
+              // actions={[<Icon type="setting" />, <Icon type="edit" />, <Icon type="ellipsis" />]}
             >
               <Meta
                 avatar={
@@ -78,15 +82,15 @@ class HomePage extends PureComponent {
           </Col>
           <Col span={6}>
             <Card
-              style={{ width: 250 }}
+              style={{ width: 250, backgroundColor: '#8cbed6', borderColor: '#8cbed6' }}
               cover={
                 <img
                   alt="example"
-                  style={{ height: 200, width: '100%' ,  borderRadius: '30%' }}
+                  style={{ height: 200, width: '100%', borderRadius: '30%' }}
                   src="/images/pet10.jpeg"
                 />
               }
-              actions={[<Icon type="setting" />, <Icon type="edit" />, <Icon type="ellipsis" />]}
+              // actions={[<Icon type="setting" />, <Icon type="edit" />, <Icon type="ellipsis" />]}
             >
               <Meta
                 avatar={
@@ -102,15 +106,15 @@ class HomePage extends PureComponent {
         <Row gutter={16}>
           <Col span={5}>
             <Card
-              style={{ width: 250 }}
+              style={{ width: 250, backgroundColor: '#8cbed6', borderColor: '#8cbed6' }}
               cover={
                 <img
                   alt="example"
-                  style={{ height: 200, width: '100%' , borderRadius: '30%' }}
+                  style={{ height: 200, width: '100%', borderRadius: '30%' }}
                   src="/images/pet11.jpeg"
                 />
               }
-              actions={[<Icon type="setting" />, <Icon type="edit" />, <Icon type="ellipsis" />]}
+              // actions={[<Icon type="setting" />, <Icon type="edit" />, <Icon type="ellipsis" />]}
             >
               <Meta
                 avatar={
@@ -123,11 +127,15 @@ class HomePage extends PureComponent {
           </Col>
           <Col span={5}>
             <Card
-              style={{ width: 250 }}
+              style={{ width: 250, backgroundColor: '#8cbed6', borderColor: '#8cbed6' }}
               cover={
-                <img alt="example" style={{ height: 200, width: '100%' , borderRadius: '30%' }} src="/images/pet7.jpg" />
+                <img
+                  alt="example"
+                  style={{ height: 200, width: '100%', borderRadius: '30%' }}
+                  src="/images/pet7.jpg"
+                />
               }
-              actions={[<Icon type="setting" />, <Icon type="edit" />, <Icon type="ellipsis" />]}
+              // actions={[<Icon type="setting" />, <Icon type="edit" />, <Icon type="ellipsis" />]}
             >
               <Meta
                 avatar={
@@ -140,11 +148,15 @@ class HomePage extends PureComponent {
           </Col>
           <Col span={5}>
             <Card
-              style={{ width: 250 }}
+              style={{ width: 250, backgroundColor: '#8cbed6', borderColor: '#8cbed6' }}
               cover={
-                <img alt="example" style={{ height: 200, width: '100%' , borderRadius: '30%' }} src="/images/pet8.jpeg" />
+                <img
+                  alt="example"
+                  style={{ height: 200, width: '100%', borderRadius: '30%' }}
+                  src="/images/pet8.jpeg"
+                />
               }
-              actions={[<Icon type="setting" />, <Icon type="edit" />, <Icon type="ellipsis" />]}
+              // actions={[<Icon type="setting" />, <Icon type="edit" />, <Icon type="ellipsis" />]}
             >
               <Meta
                 avatar={
@@ -157,11 +169,15 @@ class HomePage extends PureComponent {
           </Col>
           <Col span={6}>
             <Card
-              style={{ width: 250 }}
+              style={{ width: 250, backgroundColor: '#8cbed6', borderColor: '#8cbed6' }}
               cover={
-                <img alt="example" style={{ height: 200, width: '100%' , borderRadius: '30%' }} src="/images/pet9.jpeg" />
+                <img
+                  alt="example"
+                  style={{ height: 200, width: '100%', borderRadius: '30%' }}
+                  src="/images/pet9.jpeg"
+                />
               }
-              actions={[<Icon type="setting" />, <Icon type="edit" />, <Icon type="ellipsis" />]}
+              // actions={[<Icon type="setting" />, <Icon type="edit" />, <Icon type="ellipsis" />]}
             >
               <Meta
                 avatar={
@@ -177,32 +193,15 @@ class HomePage extends PureComponent {
         <Row gutter={16}>
           <Col span={5}>
             <Card
-              style={{ width: 250 }}
-              cover={
-                <img alt="example" style={{ height: 200, width: '100%' , borderRadius: '30%' }} src="/images/pet9.jpeg" />
-              }
-              actions={[<Icon type="setting" />, <Icon type="edit" />, <Icon type="ellipsis" />]}
-            >
-              <Meta
-                avatar={
-                  <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
-                }
-                title="Card title"
-                description="This is the description"
-              />
-            </Card>
-          </Col>
-          <Col span={5}>
-            <Card
-              style={{ width: 250 }}
+              style={{ width: 250, backgroundColor: '#8cbed6', borderColor: '#8cbed6' }}
               cover={
                 <img
                   alt="example"
-                  style={{ height: 200, width: '100%' , borderRadius: '30%' }}
-                  src="/images/pet10.jpeg"
+                  style={{ height: 200, width: '100%', borderRadius: '30%' }}
+                  src="/images/pet9.jpeg"
                 />
               }
-              actions={[<Icon type="setting" />, <Icon type="edit" />, <Icon type="ellipsis" />]}
+              // actions={[<Icon type="setting" />, <Icon type="edit" />, <Icon type="ellipsis" />]}
             >
               <Meta
                 avatar={
@@ -215,7 +214,28 @@ class HomePage extends PureComponent {
           </Col>
           <Col span={5}>
             <Card
-              style={{ width: 250 }}
+              style={{ width: 250, backgroundColor: '#8cbed6', borderColor: '#8cbed6' }}
+              cover={
+                <img
+                  alt="example"
+                  style={{ height: 200, width: '100%', borderRadius: '30%' }}
+                  src="/images/pet10.jpeg"
+                />
+              }
+              // actions={[<Icon type="setting" />, <Icon type="edit" />, <Icon type="ellipsis" />]}
+            >
+              <Meta
+                avatar={
+                  <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+                }
+                title="Card title"
+                description="This is the description"
+              />
+            </Card>
+          </Col>
+          <Col span={5}>
+            <Card
+              style={{ width: 250, backgroundColor: '#8cbed6', borderColor: '#8cbed6' }}
               cover={
                 <img
                   alt="example"
@@ -223,7 +243,7 @@ class HomePage extends PureComponent {
                   src="/images/pet11.jpeg"
                 />
               }
-              actions={[<Icon type="setting" />, <Icon type="edit" />, <Icon type="ellipsis" />]}
+              // actions={[<Icon type="setting" />, <Icon type="edit" />, <Icon type="ellipsis" />]}
             >
               <Meta
                 avatar={
@@ -236,7 +256,7 @@ class HomePage extends PureComponent {
           </Col>
           <Col span={6}>
             <Card
-              style={{ width: 250 }}
+              style={{ width: 250, backgroundColor: '#8cbed6', borderColor: '#8cbed6' }}
               cover={
                 <img
                   alt="example"
@@ -244,7 +264,7 @@ class HomePage extends PureComponent {
                   src="/images/pet13.jpeg"
                 />
               }
-              actions={[<Icon type="setting" />, <Icon type="edit" />, <Icon type="ellipsis" />]}
+              // actions={[<Icon type="setting" />, <Icon type="edit" />, <Icon type="ellipsis" />]}
             >
               <Meta
                 avatar={
